@@ -1,0 +1,70 @@
+﻿@model OOP_6.Models.FormWithResultModel
+
+@{
+    <form asp-action="Add" asp-controller="Users" method="post" class="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="UserFromForm.FirstName">Enter First Name:</label>
+                        <input asp-for="UserFromForm.FirstName" class="form-control" />
+                        <div class="text-danger">
+                            <span asp-validation-for="UserFromForm.FirstName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="UserFromForm.LastName">Enter Last Name:</label>
+                        <input asp-for="UserFromForm.LastName" class="form-control" />
+                        <div class="text-danger">
+                            <span asp-validation-for="UserFromForm.LastName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="UserFromForm.Email">Email:</label>
+                        <input asp-for="UserFromForm.Email" class="form-control" />
+                        <div class="text-danger">
+                            <span asp-validation-for="UserFromForm.Email"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="UserFromForm.Address">Address:</label>
+                        <input asp-for="UserFromForm.Address" class="form-control" />
+                        <div class="text-danger">
+                            <span asp-validation-for="UserFromForm.Address"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="UserFromForm.BirthDate">Birth Date:</label>
+                        <input type="date" asp-for="UserFromForm.BirthDate" class="form-control" />
+                        <div class="text-danger">
+                            <span asp-validation-for="UserFromForm.BirthDate"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    @if (Model.UserToForm is not null)
+    {
+        <div class="user-card">
+            <h3>@Model.UserToForm.FirstName @Model.UserToForm.LastName</h3>
+            <p>Id: @Model.UserToForm.Id</p>
+            <p>Email: @Model.UserToForm.Email</p>
+            <p>Address: @Model.UserToForm.Address</p>
+            <p>Registered at: @Model.UserToForm.RegisteredAt</p>
+            <p>Birth date: @Model.UserToForm.BirthDate</p>
+        </div>
+    }
+}

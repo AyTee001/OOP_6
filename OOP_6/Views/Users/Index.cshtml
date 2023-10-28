@@ -1,0 +1,22 @@
+﻿@model IEnumerable<OOP_6.DAL.User>
+
+@{
+    @foreach (var user in Model)
+    {
+        <div class="user-card">
+            <h3>@user.FirstName @user.LastName</h3>
+            <p>Id: @user.Id</p>
+            <details>
+                <summary>Show Details</summary>
+                <div class="card card-body user-card-content">
+                    <p>Email: @user.Email</p>
+                    <p>Address: @user.Address</p>
+                    <p>Registered at: @user.RegisteredAt</p>
+                    <p>Birth date: @user.BirthDate</p>
+                </div>
+            </details>
+            <a class="btn btn-primary" asp-area="" asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id">Edit User</a>
+        </div>
+    }
+
+}
