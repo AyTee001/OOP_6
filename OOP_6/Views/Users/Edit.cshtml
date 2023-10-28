@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="FirstName">Enter First Name:</label>
+                        <label asp-for="FirstName">First Name:</label>
                         <input asp-for="FirstName" class="form-control" />
                         <div class="text-danger">
                             <span asp-validation-for="FirstName"></span>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="LastName">Enter Last Name:</label>
+                        <label asp-for="LastName">Last Name:</label>
                         <input asp-for="LastName" class="form-control" />
                         <div class="text-danger">
                             <span asp-validation-for="LastName"></span>
@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <a class="btn btn-danger" asp-controller="Users" asp-action="Delete">Delete User</a>
+                    <button type="submit" class="btn btn-primary" asp-action="">Submit</button>
+                    <button type="submit" class="btn btn-danger" asp-controller="Users" asp-action="Delete">Delete User</button>
                 </div>
             </div>
         </div>
